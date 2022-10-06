@@ -1,9 +1,16 @@
-import './App.css';
+// import Input from "./components/atoms/Input.js"
+// import Label from "./components/atoms/Label.js"
+import InputForm from './components/molecules/InputForm.js'
 
-function App() {
+const App = () => {
+  const data = {
+    placeholder: "Hi, it's me",
+    label: "Do you see mee",
+  }
+  
   return (
-    <div className="App">
-
+    <div className="container">
+      <InputForm data={data} />
     </div>
   );
 }
