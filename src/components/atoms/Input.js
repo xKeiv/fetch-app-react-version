@@ -6,7 +6,7 @@ const InputStyle = styled.input`
 width: 170px;
 
 background: #499167ff;
-color: green;
+color: #252525;
 border: 1px solid black;
 border-radius: 3px;
 
@@ -19,19 +19,27 @@ border-radius: 3px;
 
 // General Input
 
-const Input = ({ placeholder }) => {
+const Input = ({ placeholder, focusHandler }) => {
   return (
     <div>
         <InputStyle
           type="text"
           placeholder={placeholder}
+          onFocus={(e) => {
+            focusHandler(true);
+            console.log('focus')
+        }}
+          onBlur={(e) => {
+            focusHandler(false);
+            console.log('blur')
+        }}
            />
     </div>
   )
 }
 
 Input.defaultProps = {
-  placeholder: 'What are you looking for, young jedi?',
+  placeholder: 'What are you looking for?',
 }
 
 export default Input
