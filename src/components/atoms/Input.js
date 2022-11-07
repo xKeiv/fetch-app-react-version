@@ -27,11 +27,9 @@ const Input = ({ placeholder, focusHandler }) => {
           placeholder={placeholder}
           onFocus={(e) => {
             focusHandler(true);
-            console.log('focus')
         }}
           onBlur={(e) => {
             focusHandler(false);
-            console.log('blur')
         }}
            />
     </div>
