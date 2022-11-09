@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import CharacterTile from '../molecules/CharacterTile.js';
+import CharacterTile from '../organisms/CharacterTile.js';
 import { useParams } from 'react-router-dom';
+import Loader from '../atoms/Loader.js';
+import styled from '@emotion/styled';
+
 
 const Character = () => {
+
+const CharacterBg = styled.div`
+background: #DBDBD7;
+color: #464D8F;
+width: 100vw;
+height: 100vh;`
 
 const { id } = useParams()
   const [error, setError] = useState(null);
@@ -23,17 +32,21 @@ const { id } = useParams()
           setError(error);
         }
       )
-  }, )
+  }, [id])
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <CharacterBg>
+      Error: {error.message}
+      </CharacterBg>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <Loader />;
   } else {
     return (
-      <CharacterTile
-      characterData={ data } />
-
+      <CharacterBg>
+        <CharacterTile
+        characterData={ data }
+        />
+      </CharacterBg>
     );
   }
 

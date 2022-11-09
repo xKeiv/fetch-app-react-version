@@ -7,7 +7,8 @@ import styled from '@emotion/styled';
 
 const Background = styled.div`
 background: #7A9B76;
-height: 2100px;
+height: 100vh;
+width: 100vw;
 `
 
 //general

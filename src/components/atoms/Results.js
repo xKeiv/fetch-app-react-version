@@ -6,18 +6,18 @@ import styled from '@emotion/styled'
 const Button = styled.button`
 background: #495F5D;
 border: 2px hidden #FFFFFF;
-border-radius: 15px;
-width: 60px;
-margin: 5px;
-padding: 10px;
+border-radius: 10%;
+width: 100px;
+margin: 4px;
+padding: 6px;
 
 &:hover {
 background: #5B7A77;
 border: 2px hidden #FFFFFF;
-border-radius: 15px;
-width: 60px;
-margin: 5px;
-padding: 10px;
+border-radius: 10%;
+width: 100px;
+margin: 4px;
+padding: 6px;
 }
 `
 const Flex = styled.div`
