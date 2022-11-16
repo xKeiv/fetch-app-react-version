@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Button from '../molecules/Button';
+import LearnMore from '../molecules/LearnMore';
 //Styling
 
 const EvenColumns = styled.div`
@@ -7,25 +8,28 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
-align-items: flex-start;
-align-content: center;
-`
+align-items: space-between;
+align-content: center;`
 
 const Wrap = styled.div`
+display: flex;
 flex-wrap: wrap;
-flex-direction: column;`
+flex-direction: row;`
 
 const Frames = styled.section`
 background: inherit;
 border: 2px solid #8f8846;
 border-radius: 5%;
 color: #464D8F;
-
 padding: 5px;
 margin: 5px;
-
 width: 250px;
 `
+
+const Column = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-between;`
 
 
 
@@ -34,68 +38,60 @@ width: 250px;
 const CharacterTile = ({ characterData }) => {
 
   return (
-    <EvenColumns>
+    <div>
         <Wrap>
-          <h4>General Information:</h4>
+          <Column><div><h4>General Information:</h4>
         <Frames>
-          Name: { characterData.name }<br />
-          Birth Year: { characterData.birth_year}<br />
-          Planet: <Button /><br/>
-          {/* { characterData.homeworld }<br /> */}
-          Movies: <Button /><br />
+          <strong>Name:</strong> { characterData.name }<br />
+          <strong>Gender:</strong> { characterData.gender}<br />
+          <strong>Birth Year:</strong> { characterData.birth_year}<br />
+          <strong>Movies:</strong> <Button /><br />
           {/* { characterData.films }<br /> */}
         </Frames>
+          </div>
 
-        <h4>Appearance:</h4>
+        <div><h4>Appearance:</h4>
         <Frames>
-          <strong>Species:</strong> { characterData.species }<br />
           <strong>Hair Colour:</strong> { characterData.hair_color }<br />
           <strong>Eyes Colour:</strong> { characterData.eye_color }<br />
           <strong>Height:</strong> { characterData.height } cm<br />
           <strong>Mass:</strong> {characterData.mass} kg<br />
         </Frames>
+        </div>
+        </Column>
 
-        <h4>Transportation:</h4>
+        <div><h4>Species Data:<Button /></h4>
+        <Frames>
+          <strong>Name: </strong><br />
+          <strong>Classification:</strong><br />
+          <strong>Designation:</strong><br />
+          <strong>Average Height:</strong><br />
+          <strong>Skin Colors:</strong><br />
+          <strong>Hair Colors:</strong><br />
+          <strong>Eye Colors:</strong><br />
+          <strong>Average Lifespan:</strong><br />
+          <strong>Language:</strong><br />
+        </Frames>
+        </div>
+        </Wrap>
+
+        <Wrap>
+        <div><h4>Transportation:</h4>
         <Frames>
           Vehicles: <br />
           <Button />
-          {/* { characterData.vehicles }<br /> */}<br />
+          { characterData.vehicles }<br /><br />
           Starships: <br />
           <Button />
           {/* { characterData.starships }<br /> */}
         </Frames>
+        </div>
+
+        <div><h4>Homeworld: <Button /></h4>
+        <LearnMore />
+        </div>
         </Wrap>
-
-        <Wrap>
-        <h4>Species Data:</h4>
-        <Frames>
-          <strong>Name: </strong>Human,<br />
-          <strong>Classification: </strong>Mammal,<br />
-          <strong>Designation: </strong>Sentient<br />
-          <strong>Average Height: </strong>180,<br />
-          <strong>Skin Colors: </strong>Caucasian, Black, Asian, Hispanic<br />
-          <strong>Hair Colors: </strong>Blonde, Brown, Black, Red",<br />
-          <strong>Eye Colors: </strong>Brown, Blue, Breen, Hazel, Grey, Amber",<br />
-          <strong>Average Lifespan: </strong>120,<br />
-          <strong>Homeworld: </strong><Button /><br />
-          <strong>Language: </strong>Galactic Basic,<br />
-        </Frames>
-        
-        <h4>Homeplanet Data: PlName</h4>
-        <Frames>
-          <strong>Orbital Period:</strong><br />
-          <strong>Diameter:</strong><br />
-          <strong>Climate:</strong><br />
-          <strong>Gravity:</strong><br />
-          <strong>Terrain:</strong><br />
-          <strong>Surface Water:</strong><br />
-          <strong>Population:</strong><br />
-          
-
-        </Frames>
-
-        </Wrap>
-    </EvenColumns>
+    </div>
   )
 }
 

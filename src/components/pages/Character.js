@@ -19,14 +19,13 @@ const { id } = useParams()
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetch(`https://swapi.dev/api/people/${id}/`)
+    fetch(`https://swapi.py4e.com/api/people/${id}/`)
       .then(res => res.json())
       .then(
         (result) => {
           setIsLoaded(true);
           setData(result);
       },
-      
         (error) => {
           setIsLoaded(true);
           setError(error);
